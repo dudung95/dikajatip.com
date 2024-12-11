@@ -1,0 +1,140 @@
+/* Reset dan style dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #2C3E50;
+    padding: 0.6rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px;
+}
+
+.brand {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Garis bawah dan efek hover */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #18BC9C;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #18BC9C;
+}
+
+/* Main content spacing */
+.main-content {
+    padding-top: 80px;
+    min-height: calc(100vh - 60px);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #2C3E50;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .brand {
+        margin-bottom: 1rem;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    main {
+        margin-top: 120px;
+    }
+}
+
+/* Style untuk link aktif */
+.navbar a.active {
+    color: #18BC9C;
+}
+
+/* Garis bawah untuk link aktif */
+.navbar a.active::after {
+    width: 100%;
+}
+
+/* Efek hover pada link */
+.navbar a:hover {
+    color: #18BC9C;
+}
+
+/* Garis bawah saat hover */
+.navbar a:hover::after {
+    width: 100%;
+}
+.map-container {
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    border-radius: 10px; /* Sudut melengkung */
+    width: 100%; /* Membuat peta responsif */
+    max-width: 600px; /* Maksimal lebar peta */
+    height: 450px; /* Tinggi peta */
+}
