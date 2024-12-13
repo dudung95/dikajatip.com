@@ -1,0 +1,662 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2C3E50;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.brand {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Garis bawah dan efek hover */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #18BC9C;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #18BC9C;
+}
+
+/* Main content spacing */
+.main-content {
+    min-height: calc(100vh - 140px); /* 80px header + 60px footer */
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #ECF0F1;
+    text-align: center;
+}
+
+.hero-text {
+    max-width: 500px;
+    margin: 0 20px;
+    text-align: justify;
+    margin: 20px;
+}
+
+.hero-text h2 {
+    font-size: 2.2em; /* Meningkatkan ukuran font untuk judul */
+    color: #2C3E50;
+    margin-bottom: 15px; /* Meningkatkan jarak bawah */
+    text-align: center;
+}
+
+.hero-text p {
+    color: #7F8C8D;
+    font-size: 1em;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.cta-button {
+    padding: 12px 25px; /* Menambah padding pada tombol */
+    background-color: #18BC9C;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #15A589;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #18BC9C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.1); /* Meningkatkan efek zoom saat hover */
+}
+
+/* Hobi Section */
+.hobby-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.hobby-section h2 {
+    font-size: 2em;
+    color: #2C3E50;
+    margin-bottom: 20px;
+}
+
+.hobby-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hobby-item {
+    background-color: #ffffff;
+    border: 1px solid #BDC3C7;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.hobby-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.hobby-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #2C3E50;
+}
+
+.hobby-item p {
+    color: #7F8C8D;
+}
+
+/* Efek Hover */
+.hobby-item:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background-color: #2C3E50;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #18BC9C;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #15A589;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 30px 10px;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+}
+
+.projects-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2rem;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-card {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.project-info p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    margin-bottom: 15px;
+}
+
+.project-tags span {
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    color: #555;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.project-link:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+}
+
+/* Education Section Styles */
+.education-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.education-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.education-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-image {
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.education-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.education-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.education-info h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.education-info p {
+    color: #666;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.education-info strong {
+    color: #2c3e50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .education-card {
+        flex-direction: column;
+    }
+    
+    .education-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Portfolio Section Styles */
+.portfolio-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.portfolio-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-3px);
+}
+
+.portfolio-image {
+    flex: 0 0 300px;
+    height: 250px;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
+.portfolio-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.portfolio-info h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.portfolio-info p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span {
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.portfolio-links {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-demo {
+    background: #007bff;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-demo:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .portfolio-card {
+        flex-direction: column;
+    }
+
+    .portfolio-image {
+        flex: none;
+        height: 200px;
+    }
+
+    .portfolio-image img {
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+/* Skills Section Styles */
+.skills-section {
+    padding: 10px 20px 60px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 40px);
+}
+
+.skills-section h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.skill-item {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.skill-item img:hover {
+    transform: scale(1.1);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #007bff;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.percent {
+    font-size: 0.9rem; /* Ukuran font untuk persentase */
+    color: #333; /* Warna teks */
+    margin-top: 5px; /* Jarak atas */
+}
+
+/* Hover effect untuk progress bar */
+.skill-item:hover .progress {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styles untuk judul section khusus halaman skill, portofolio, dan pendidikan */
+.skills-section h2,
+.portfolio-section h2,
+.education-section h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2rem;
+}
+
+/* Content sections */
+.skills-section,
+.portfolio-section,
+.education-section {
+    padding: 10px 20px 60px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 40px);
+}
+
+/* Content containers */
+.skills-container,
+.portfolio-container,
+.education-container {
+    margin-top: 20px;
+}
+
+.map-container {
+    margin: 20px 0; /* Jarak atas dan bawah */
+    text-align: center; /* Rata tengah */
+}
+
+.map-container iframe {
+    border-radius: 10px; /* Sudut melengkung */
+}
+
+.skill-item p {
+    font-size: 0.85rem; /* Ukuran font untuk deskripsi */
+    color: #666; /* Warna teks deskripsi */
+    margin: 5px 0; /* Jarak atas dan bawah */
+}
